@@ -1,0 +1,192 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+void main() {
+    //zad 1
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Podaj liczbę całkowitą dodatnią: ");
+    int liczba = sc.nextInt();
+    int i = 1;
+
+    while (i <= liczba) {
+        System.out.println(i);
+        i += 2;
+    }
+
+//zad 2
+    System.out.println("Podaj liczbe całkowitą dodatnia n: ");
+    int n = sc.nextInt();
+    int wynik = 2;
+    while (wynik < n) {
+        System.out.println(wynik);
+        wynik *= 2;
+    }
+
+    //zad 3
+    System.out.println("Napisz liczbę: ");
+    int liczba1 = sc.nextInt();
+
+    while (liczba1 != 0) {
+        System.out.println("Jeszcze raz");
+        liczba1 = sc.nextInt();
+    }
+
+    //zad 4
+    int i2 = 0;
+    int min = 0;
+    int max = 0;
+
+
+    System.out.println("Podaj ciąg liczb całkowitych: ");
+    int ciag = sc.nextInt();
+
+
+    if (ciag != 0) {
+        min = ciag;
+        max = ciag;
+    }
+    while (ciag != 0) {
+
+        i2++;
+        if (ciag < min) {
+            min = ciag;
+        }
+
+        if (ciag > max) {
+            max = ciag;
+        }
+
+        System.out.println("Podaj ciag liczb calkowitych: ");
+        ciag = sc.nextInt();
+    }
+    if (i2 > 0) {
+        int suma1 = min + max;
+        double srednia = (double) suma1 / 2;
+
+        System.out.println("Najmniejsza liczba: " + min);
+        System.out.println("Najwieksza liczba: " + max);
+        System.out.println("Suma najwiekszej i najmniejszej: " + suma1);
+        System.out.println("Srednia najwiekszej i najmniejszej: " + srednia);
+    } else {
+        System.out.println("Nie podano zadnych liczb");
+    }
+
+
+// Zad 5
+    Random generator = new Random();
+    int losowaliczba = generator.nextInt(100) + 1;
+
+    System.out.println("Zgadnij liczbe od 1 do 100: ");
+    int zgadnij = sc.nextInt();
+
+    while (zgadnij != losowaliczba) {
+        if (losowaliczba < zgadnij) {
+            System.out.println("Podałeś za dużą wartość");
+            zgadnij = sc.nextInt();
+        } else if (losowaliczba > zgadnij) {
+            System.out.println("Podałeś za małą wartość");
+            zgadnij = sc.nextInt();
+        }
+    }
+    System.out.println("Gratulacje!");
+
+//zad 6
+
+    System.out.println("Podaj znak wypełnienia prostokąta");
+    String zn = sc.next();
+    System.out.println("Podaj pozycje lewego górnego rogu prostokąta x: ");
+    int x = sc.nextInt();
+    System.out.println("Podaj pozycje lewego górnego prostokąta y: ");
+    int y = sc.nextInt();
+    System.out.println("Podaj długość boków prostokąta a: ");
+    int a = sc.nextInt();
+    System.out.println("Podaj długość boków prostokąta b: ");
+    int b = sc.nextInt();
+
+
+    if (a <= 0 || b <= 0 || x < 1 || y < 1) {
+        System.out.println("Wymiary muszą być większe od 0, a współrzędne >= 1.");
+    } else {
+
+        for (int y1 = 1; y1 < y; y1++) {
+            System.out.println();
+        }
+
+
+        for (int b1 = 0; b1 < b; b1++) {
+
+            for (int x1 = 1; x1 < x; x1++) {
+                System.out.print(" ");
+            }
+
+
+            for (int a1 = 0; a1 < a; a1++) {
+                System.out.print(zn);
+            }
+
+
+            System.out.println();
+        }
+    }
+
+    //zad 7
+    System.out.println("Podaj liczbe calkowita n(wysokosc choinki): ");
+    int n1 = sc.nextInt();
+    if (n1 > 0) {
+        for (int i1 = 0; i1 < n1; i1++) {
+            for (int i3 = 0; i3 < n1; i3++) {
+                System.out.print(" ");
+            }
+            for (int i4 = 0; i4 < (2 * i1 + 1); i4++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+    } else {
+        System.out.println("Wysokość musi byc wieksza od 0");
+    }
+//zad 8
+    System.out.println("Podaj liczbe zeby policzyc silnie: ");
+    int silnia = sc.nextInt();
+    int wynik1 = 1;
+    if (silnia == 0) {
+        System.out.println("Silnia wynosi 1");
+    } else {
+        for (int i7 = 1; i7 <= silnia; i7++) {
+            wynik1 *= i7;
+
+        }
+        System.out.println("Silnia wynosi: " + wynik1);
+    }
+
+//zad 9
+    System.out.print("Napisz słowo: ");
+    String slowo = sc.next();
+
+
+    String zwykle = slowo.toLowerCase();
+
+
+    String odwrocone = new StringBuilder(zwykle).reverse().toString();
+
+
+    if (zwykle.equals(odwrocone)) {
+        System.out.println("To słowo to palindrom");
+    } else {
+        System.out.println("To słowo to nie palindrom");
+    }
+    //zad 10 zrobione wsystkie
+    petlaglowna:
+    for(int i9 = 1;i9<=10; i9++){
+        if(i9%2!=0){
+            continue;
+        }
+        for(int j9=1;j9<=10;j9++){
+            System.out.println(j9);
+            if(j9>i9){
+                continue petlaglowna;
+            }
+        }
+    }
+}
+
+
